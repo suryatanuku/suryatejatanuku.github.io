@@ -8,7 +8,8 @@ export const frTranslations = {
     certifications: 'Certifications',
     contact: 'Contact',
   },
-  hero: {
+  portfolio:'portefeuille',
+  home: {
     greeting: 'Bonjour, je suis',
     role: 'Développeur Full Stack passionné par la création d\'applications web belles et fonctionnelles',
     resume: 'CV',
@@ -16,13 +17,16 @@ export const frTranslations = {
     viewProjects: 'Voir les Projets',
   },
   about: {
-    title: 'À propos de moi',
+    me: 'À propos de moi'
   },
   education: {
     title: 'Éducation',
-    master: 'Master en Informatique',
-    bachelor: 'Licence en Génie Logiciel',
-    coursework: 'Cours pertinents',
+    master: 'Master en Applications Informatiques',
+    bachelor: 'Licence en Sciences avec spécialisation en Mathématiques, Physique et Chimie',
+    bacheloruniv:"Université d'Andhra",
+    masteruniv: "Université Adikavi Nannaya",
+    coursework: 'Cours pertinents:',
+    coursework2: "Langages de programmation, Structures de données et algorithmes, Systèmes d'exploitation, SGBD (Systèmes de gestion de bases de données), Réseaux informatiques, Microprocesseurs et systèmes embarqués, Systèmes distribués, Génie logiciel, Technologies web."
   },
   skills: {
     title: 'Compétences & Expertise',

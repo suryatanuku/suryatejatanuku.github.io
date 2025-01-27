@@ -8,43 +8,47 @@ export const enTranslations = {
     certifications: "Certifications",
     contact: "Contact",
   },
+  portfolio:'Portfolio',
   hero: {
-    greeting: "Bonjour, je suis",
-    role: "Développeur Full Stack passionné par la création d'applications web belles et fonctionnelles",
+    greeting: "Hi, I'm",
+    role: "Full Stack Developer passionate about creating beautiful and functional web applications",
     resume: "CV",
-    contactMe: "Me Contacter",
-    viewProjects: "Voir les Projets",
+    contactMe: "Contact Me",
+    viewProjects: "View Projects",
   },
   about: {
-    title: "À propos de moi",
+    me: 'About Me'
   },
   education: {
-    title: "Éducation",
-    master: "Master en Informatique",
-    bachelor: "Licence en Génie Logiciel",
-    coursework: "Cours pertinents",
+    title: "Education",
+    master: "Master of Computer Applications",
+    bachelor: "Bachelor of Science in Mathematics, Physics and Chemistry",
+    bacheloruniv:'Andhra University',
+    masteruniv:'Adikavi Nannaya University',
+    coursework: "Relevant coursework:",
+    coursework2: "Programming Languages, Data Structures and Algorithms,Operating Systems,DBMS,Computer Networks, Microprocessors and Embedded Systems,Distributed Systems, Software Engineering, Web Technologies."
   },
   skills: {
-    title: "Compétences & Expertise",
+    title: "Skills & Expertise",
   },
-  projects: {
-    title: "Projets en Vedette",
-    liveDemo: "Démo en Direct",
-    loadMore: "Charger Plus",
-  },
-  certifications: {
-    title: "Certifications",
-    viewCredential: "Voir le Certificat",
-  },
-  contact: {
-    title: "Me Contacter",
-    name: "Nom",
-    email: "E-mail",
-    message: "Message",
-    send: "Envoyer le Message",
-  },
-  footer: {
-    credit: "Créé avec l'aide de l'IA et Moi-même",
-    visitors: "Visiteurs",
-  },
+  // projects: {
+  //   title: "Projets en Vedette",
+  //   liveDemo: "Démo en Direct",
+  //   loadMore: "Charger Plus",
+  // },
+  // certifications: {
+  //   title: "Certifications",
+  //   viewCredential: "Voir le Certificat",
+  // },
+  // contact: {
+  //   title: "Me Contacter",
+  //   name: "Nom",
+  //   email: "E-mail",
+  //   message: "Message",
+  //   send: "Envoyer le Message",
+  // },
+  // footer: {
+  //   credit: "Créé avec l'aide de l'IA et Moi-même",
+  //   visitors: "Visiteurs",
+  // },
 };
