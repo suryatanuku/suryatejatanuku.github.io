@@ -9,12 +9,12 @@ export const enTranslations = {
     contact: "Contact",
   },
   portfolio:'Portfolio',
-  hero: {
-    greeting: "Hi, I'm",
-    role: "Full Stack Developer passionate about creating beautiful and functional web applications",
-    resume: "CV",
-    contactMe: "Contact Me",
-    viewProjects: "View Projects",
+  "home": {
+    "greeting": "Hello, I'm",
+    "role": "A Full Stack Developer passionate about building web applications.",
+    "resume": "Download Resume",
+    "contactMe": "Contact Me",
+    "viewProjects": "View Projects"
   },
   about: {
     me: 'About Me'
@@ -31,24 +31,25 @@ export const enTranslations = {
   skills: {
     title: "Skills & Expertise",
   },
-  // projects: {
-  //   title: "Projets en Vedette",
-  //   liveDemo: "Démo en Direct",
-  //   loadMore: "Charger Plus",
-  // },
-  // certifications: {
-  //   title: "Certifications",
-  //   viewCredential: "Voir le Certificat",
-  // },
-  // contact: {
-  //   title: "Me Contacter",
-  //   name: "Nom",
-  //   email: "E-mail",
-  //   message: "Message",
-  //   send: "Envoyer le Message",
-  // },
-  // footer: {
-  //   credit: "Créé avec l'aide de l'IA et Moi-même",
-  //   visitors: "Visiteurs",
-  // },
+  projects: {
+    title: "Featured Projects",
+    liveDemo: "Live Demo",
+    loadMore: "Load More",
+  },
+  certifications: {
+    title: "Certifications",
+    viewCredential: "Voir le Certificat",
+  },
+  contact: {
+    title: "Get In Touch",
+    info:'Contact Information',
+    name: "Name",
+    email: "E-mail",
+    message: "Message",
+    send: "Send Message",
+  },
+  footer: {
+    credit: "Created with the help of AI and Myself",
+    visitors: "Visitors",
+  },
 };

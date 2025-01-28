@@ -41,11 +41,12 @@ export const frTranslations = {
     viewCredential: 'Voir le Certificat',
   },
   contact: {
-    title: 'Me Contacter',
+    title: 'Contactez-nous',
+    info:'Informations de contact',
     name: 'Nom',
     email: 'E-mail',
     message: 'Message',
-    send: 'Envoyer le Message',
+    send: 'Envoyer le message',
   },
   footer: {
     credit: 'Créé avec l\'aide de l\'IA et Moi-même',
