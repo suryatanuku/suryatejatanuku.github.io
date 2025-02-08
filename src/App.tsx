@@ -10,8 +10,44 @@ import { Projects } from './components/sections/Projects';
 import { Certifications } from './components/sections/Certifications';
 import { Contact } from './components/sections/Contact';
 import { Footer } from './components/Footer';
+import { pageview, GA_TRACKING_ID } from '../src/utils/gtag';
+import { useEffect } from 'react';
+
+// Global declaration for window.gtag
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag: (...args: any[]) => void;
+  }
+}
 
 function App() {
+  useEffect(() => {
+    // Load Google Tag Script
+    const script = document.createElement('script');
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
+    script.async = true;
+    document.head.appendChild(script);
+
+    // Initialize gtag
+    window.dataLayer = window.dataLayer || [];
+    function gtag(...args: any[]) {
+      window.dataLayer.push(args);
+    }
+    window.gtag = gtag;
+
+    gtag('js', new Date());
+    gtag('config', GA_TRACKING_ID);
+
+    // Track Page Views
+    pageview(window.location.pathname);
+
+    // Clean up the script when the component unmounts
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <LanguageProvider>
       <ThemeProvider>
@@ -34,4 +70,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
