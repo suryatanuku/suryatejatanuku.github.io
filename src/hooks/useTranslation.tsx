@@ -73,7 +73,7 @@ export function useTranslation() {
   // Fallback to English if language is not defined or is invalid
   const validLanguage = language && translations[language] ? language : 'en';
 
-  const t = (key: string) => {
+  const t = (key: string, category: string) => {
     const keys = key.split(".");
     let value: any = translations[validLanguage as keyof typeof translations];
 

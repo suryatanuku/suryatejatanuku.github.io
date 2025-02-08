@@ -1,6 +1,8 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "../../hooks/useTranslation";
+import emailjs from "@emailjs/browser";
+import { Alert, Snackbar } from "@mui/material";
 
 export function Contact() {
   const { t } = useTranslation();
@@ -9,38 +11,40 @@ export function Contact() {
     email: "",
     message: "",
   });
+  const [alert, setAlert] = useState({ open: false, message: "", severity: "success" });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
 
-    console.log("Submitting form data:", formData);
 
-    try {
-      const response = await fetch("https://contact-backend.vercel.app/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      
-
-      const result = await response.json();
-      console.log("Response from backend:", result);
-
-      if (response.ok) {
-        console.log("Form submitted successfully!");
-        alert("Message sent successfully!");
+const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  emailjs
+    .send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,   // For Vite
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,  // For Vite
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY    // For Vite
+    )
+    .then(
+      (result) => {
+        console.log("SUCCESS:", result.text);
+        setAlert({ open: true, message: "Message sent successfully!", severity: "success" });
         setFormData({ name: "", email: "", message: "" });
-      } else {
-        console.error("Form submission failed:", result);
-        alert(`Failed to send message: ${result.message || "Please try again."}`);
+      },
+      (error) => {
+        console.error("FAILED:", error);
+        setAlert({ open: true, message: "Failed to send message. Please try again.", severity: "error" });
       }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("An unexpected error occurred.");
-    }
-  };
+    )
+    .catch((error) => {
+      console.error("Unexpected error:", error);
+      setAlert({ open: true, message: "An unexpected error occurred.", severity: "error" });
+    });
+};
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -48,6 +52,9 @@ export function Contact() {
       [e.target.name]: e.target.value,
     });
   };
+
+  const handleClose = () => setAlert({ ...alert, open: false });
+
 
   return (
     <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
@@ -146,6 +153,11 @@ export function Contact() {
           </div>
         </div>
       </div>
+      <Snackbar open={alert.open} autoHideDuration={3000} onClose={handleClose} anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}>
+        <Alert onClose={handleClose} severity={alert.severity as "success" | "error"} variant="filled" sx={{ width: "100%" }}>
+          {alert.message}
+        </Alert>
+      </Snackbar>
     </section>
   );
 }

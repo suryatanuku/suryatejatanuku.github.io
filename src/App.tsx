@@ -3,6 +3,7 @@ import { LanguageProvider } from './hooks/useLanguage';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/sections/Hero';
 import { About } from './components/sections/About';
+import { Experience } from './components/sections/Experience';
 import { Education } from './components/sections/Education';
 import { Skills } from './components/sections/Skills';
 import { Projects } from './components/sections/Projects';
@@ -20,6 +21,7 @@ function App() {
             <Hero />
             <About />
             <Education />
+            <Experience />
             <Skills />
             <Projects />
             <Certifications />

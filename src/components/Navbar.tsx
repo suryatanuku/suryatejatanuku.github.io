@@ -8,6 +8,7 @@ const navigation = [
   { name: "nav.home", href: "#home" },
   { name: "nav.about", href: "#about" },
   { name: "nav.education", href: "#education" },
+  { name: "nav.experience", href: "#experience" },
   { name: "nav.skills", href: "#skills" },
   { name: "nav.projects", href: "#projects" },
   { name: "nav.certifications", href: "#certifications" },
@@ -28,7 +29,7 @@ export function Navbar() {
             href="#"
             className="-m-1.5 p-1.5 text-2xl font-bold text-gray-900 dark:text-white"
           >
-            {t('portfolio')}
+            {t("portfolio")}
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -68,7 +69,7 @@ export function Navbar() {
               href="#"
               className="-m-1.5 p-1.5 text-2xl font-bold text-gray-900 dark:text-white"
             >
-                          {t('portfolio')}
+              {t("portfolio")}
             </a>
             <button
               type="button"

@@ -1,18 +1,32 @@
 {
     "certifications": [
       {
-        "title": "AWS Certified Developer",
-        "organization": "Amazon Web Services",
-        "date": "January 2023",
-        "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=400",
-        "credentialUrl": "#"
+        "title": "Docker Essentials: A Developer Introduction",
+        "organization": "IBM",
+        "Badge":"https://www.credly.com/badges/67b27247-134a-414f-a25c-4c4aa4ea598e/public_url",
+        "image": "d35426vxse2cy3.cloudfront.net/docker-essentials.png",
+        "viewCertificate": "d35426vxse2cy3.cloudfront.net/IBMDesign20250208-25-iyxwo9.pdf"
       },
       {
-        "title": "React Developer Certification",
-        "organization": "Meta",
-        "date": "June 2023",
-        "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=400",
-        "credentialUrl": "#"
+        "title": "Associate Cloud Engineer Certification",
+        "organization": "Google Cloud",
+        "Badge":"https://www.credly.com/badges/1be4cce1-6e85-4267-a4da-5e606d9360b8/public_url",
+        "image": "d35426vxse2cy3.cloudfront.net/gcpimage.png",
+        "viewCertificate": "d35426vxse2cy3.cloudfront.net/AssociateCloudEngineer20250208-25-9lu7nl.pdf"
+      },
+      {
+        "title": "Build Your Own Chatbot - Level 1",
+        "organization": "IBM",
+        "Badge":"https://www.credly.com/badges/9ebc61ff-e5d9-414e-ab56-33fcbac46f3c/public_url",
+        "image": "d35426vxse2cy3.cloudfront.net/ownchatbot.png",
+        "viewCertificate": "d35426vxse2cy3.cloudfront.net/IBMDesign20250208-27-w9nq6d.pdf"
+      },
+      {
+        "title": "AWS Certified Solutions Architect - Associate",
+        "organization": "Amazon Web Services",
+        "Badge":"https://cp.certmetrics.com/amazon/en/public/verify/credential/4V8LLTFCE11Q1CKP",
+        "image": "d35426vxse2cy3.cloudfront.net/solution.png",
+        "viewCertificate": "d35426vxse2cy3.cloudfront.net/AWSSolutionArc19.pdf"
       }
     ]
   }

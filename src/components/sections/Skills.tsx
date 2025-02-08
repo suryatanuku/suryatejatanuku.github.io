@@ -17,7 +17,7 @@ export function Skills() {
               className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg"
             >
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                {skillGroup.category}
+                {t(`skills.categories.${skillGroup.category}`, skillGroup.category)}
               </h3>
               <ul className="space-y-4">
                 {skillGroup.items.map((skill) => (
