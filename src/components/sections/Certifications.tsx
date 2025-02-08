@@ -1,25 +1,9 @@
 import { useTranslation } from '../../hooks/useTranslation';
-
-
-const certifications = [
-  {
-    title: 'AWS Certified Developer',
-    organization: 'Amazon Web Services',
-    date: 'January 2023',
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=400',
-    credentialUrl: '#',
-  },
-  {
-    title: 'React Developer Certification',
-    organization: 'Meta',
-    date: 'June 2023',
-    image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=400',
-    credentialUrl: '#',
-  },
-];
+import certificationsData from '../../schema/certData.json'; // Import the JSON file
 
 export function Certifications() {
   const { t } = useTranslation();
+  const certifications = certificationsData.certifications; // Access the certifications array
 
   return (
     <section id="certifications" className="py-20">
@@ -54,8 +38,8 @@ export function Certifications() {
                   rel="noopener noreferrer"
                   className="text-blue-600 dark:text-blue-400 hover:underline"
                 >
-          {t('certifications.viewCredential')}
-          </a>
+                  {t('certifications.viewCredential')}
+                </a>
               </div>
             </div>
           ))}

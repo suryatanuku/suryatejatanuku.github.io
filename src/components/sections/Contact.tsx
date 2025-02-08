@@ -1,19 +1,45 @@
-import { Mail, MapPin, Phone } from 'lucide-react';
-import { useState } from 'react';
-import { useTranslation } from '../../hooks/useTranslation';
+import { Mail, MapPin, Phone } from "lucide-react";
+import { useState } from "react";
+import { useTranslation } from "../../hooks/useTranslation";
 
 export function Contact() {
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log('Form submitted:', formData);
+
+    console.log("Submitting form data:", formData);
+
+    try {
+      const response = await fetch("https://contact-backend.vercel.app/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      
+
+      const result = await response.json();
+      console.log("Response from backend:", result);
+
+      if (response.ok) {
+        console.log("Form submitted successfully!");
+        alert("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        console.error("Form submission failed:", result);
+        alert(`Failed to send message: ${result.message || "Please try again."}`);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An unexpected error occurred.");
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -27,13 +53,13 @@ export function Contact() {
     <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
-        {t('contact.title')}
+          {t("contact.title")}
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <div className="bg-white dark:bg-gray-900 rounded-lg p-8 shadow-lg">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-              {t('contact.info')}
+                {t("contact.info")}
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center">
@@ -64,7 +90,7 @@ export function Contact() {
                   htmlFor="name"
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                 >
-                                {t('contact.name')}
+                  {t("contact.name")}
                 </label>
                 <input
                   type="text"
@@ -81,7 +107,7 @@ export function Contact() {
                   htmlFor="email"
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                 >
-                                                  {t('contact.email')}
+                  {t("contact.email")}
                 </label>
                 <input
                   type="email"
@@ -98,7 +124,8 @@ export function Contact() {
                   htmlFor="message"
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                 >
-                                                  {t('contact.message')}                                                  </label>
+                  {t("contact.message")}
+                </label>
                 <textarea
                   id="message"
                   name="message"
@@ -113,7 +140,8 @@ export function Contact() {
                 type="submit"
                 className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
               >
-                                                  {t('contact.send')}                                                  </button>
+                {t("contact.send")}
+              </button>
             </form>
           </div>
         </div>

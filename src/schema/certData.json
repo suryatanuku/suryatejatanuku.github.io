@@ -1,0 +1,19 @@
+{
+    "certifications": [
+      {
+        "title": "AWS Certified Developer",
+        "organization": "Amazon Web Services",
+        "date": "January 2023",
+        "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=400",
+        "credentialUrl": "#"
+      },
+      {
+        "title": "React Developer Certification",
+        "organization": "Meta",
+        "date": "June 2023",
+        "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=400",
+        "credentialUrl": "#"
+      }
+    ]
+  }
+  

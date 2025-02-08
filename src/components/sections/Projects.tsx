@@ -1,40 +1,21 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from '../../hooks/useTranslation';
 import { useInView } from 'react-intersection-observer';
-
-const allProjects = [
-  {
-    title: 'Project 1',
-    description: 'A brief description of your first project and its key features.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
-    technologies: ['React', 'Node.js', 'MongoDB'],
-    liveUrl: '#',
-    githubUrl: '#',
-  },
-  {
-    title: 'Project 2',
-    description: 'Description of your second project highlighting its unique aspects.',
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind'],
-    liveUrl: '#',
-    githubUrl: '#',
-  },
-  // Add more projects here
-];
+import projectsData from '../../schema/projectsData.json'; // Import JSON data
 
 const ITEMS_PER_PAGE = 6;
 
 export function Projects() {
   const { t } = useTranslation();
-  const [displayedProjects, setDisplayedProjects] = useState(allProjects.slice(0, ITEMS_PER_PAGE));
+  const [displayedProjects, setDisplayedProjects] = useState(projectsData.slice(0, ITEMS_PER_PAGE));
   const [ref, inView] = useInView({
     threshold: 0,
     triggerOnce: false,
   });
 
   useEffect(() => {
-    if (inView && displayedProjects.length < allProjects.length) {
-      const nextProjects = allProjects.slice(
+    if (inView && displayedProjects.length < projectsData.length) {
+      const nextProjects = projectsData.slice(
         displayedProjects.length,
         displayedProjects.length + ITEMS_PER_PAGE
       );
@@ -98,7 +79,7 @@ export function Projects() {
             </div>
           ))}
         </div>
-        {displayedProjects.length < allProjects.length && (
+        {displayedProjects.length < projectsData.length && (
           <div ref={ref} className="flex justify-center mt-8">
             <div className="animate-pulse text-gray-500 dark:text-gray-400">
               {t('projects.loadMore')}
